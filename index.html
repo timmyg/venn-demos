@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        
+        <title>Third-party JavaScript</title>
+        <!-- <link href="/examples/common/css/bootstrap.css" rel="stylesheet" type="text/css"/> -->
+        <!-- <link href="/examples/common/css/styles.css" rel="stylesheet" type="text/css"/> -->
+        
+    </head>
+
+    <body>
+        <div class="container">
+    
+            <div class="page-header">
+                <h1>Web Service API Wrapper</h1>
+            </div>
+
+            <p>This code loads the Camera Stork SDK, then makes an API request using the SDK's Stork.api method. On success, the resulting JSON is posted below:</p>
+
+            <!-- <pre> -->
+            <div id="schedule"></div>
+            <!-- </pre> -->
+
+            <script src="sdk.js"></script>
+            <script>
+            // http://tim.api.getpeerio.com/v1/schedule.js?userId=9382SDFDS409SDDF23PAACC&apiKey=DJHS4389JKRH98FUD0SJL340934
+                Stork.init(function() {
+                    Stork.api('schedule.js', { userId: "9382SDFDS409SDDF23PAA", apiKey: "DJHS4389JKRH98FUD0SJL340934" }, function(response) {
+                        console.log("response", response);
+                        var schedule = document.getElementById('schedule');
+                        schedule.innerHTML = response.data;
+                    });
+                });
+            </script>
+
+
+            <div class="footer">
+                <a href="http://thirdpartyjs.com">Third-party JavaScript</a> is written by Ben Vinegar and Anton Kovalyov. Available via <a href="http://manning.com/vinegar">Manning Publishing</a>.
+            </div>
+        </div>
+    </body>
+</html>
