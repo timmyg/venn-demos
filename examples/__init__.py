@@ -13,9 +13,9 @@ app.config.update(
 
 PUBLISHER_DOMAIN = 'publisher.dev'
 
-PUBLISHER_URL = 'http://publisher.dev:5000'
-PUBLISHER_PROXY_URL = 'http://proxy.publisher.dev:5000'
-SERVICE_URL = 'http://widget.dev:5000'
+PUBLISHER_URL = 'http://publisher.dev:5009'
+PUBLISHER_PROXY_URL = 'http://proxy.publisher.dev:5009'
+SERVICE_URL = 'http://widget.dev:5009'
 
 
 class RegexConverter(BaseConverter):
