@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html>
+    <script src="//ajax.googleapis.com/ajax/libs/jquery/2.1.1/jquery.min.js"></script>
+    <script src="http://tim.api.getpeerio.com/v1/easyxdm/easyXDM.js"></script>
+    <script>
+
+    function apiTunnel(endpoint, params, callback) {
+        var options = {
+            url:      'http://tim.api.getpeerio.com/v1/' + endpoint,
+            data:     params,
+            type:     'GET',
+            complete: complete,
+            headers:  {
+                'Venn-Publisher-Origin': rpc.origin
+            }
+        };
+
+        function complete(xhr) {
+            var response = {};
+
+            if (xhr.status !== 200)
+                response.error = xhr.responseText;
+            else
+                response.data = JSON.parse(xhr.responseText);
+
+            callback(response);
+        }
+
+        jQuery.ajax(options);
+    }
+
+    var rpc = new easyXDM.Rpc({}, {
+        local: {
+            apiTunnel: apiTunnel
+        }
+    });
+    </script>
+</html>

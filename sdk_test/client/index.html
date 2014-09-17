@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<title>Publisher Test Page</title>
+	</head>
+	<body>
+		<h1>Publisher Test Page</h1>
+
+		<div id="schedule-widget"></div>
+		<script src="./sdk.js"></script>
+		<script>
+		Venn.init(function() {
+			var creds = {
+				user_id:'9382SDFDS409SDDF23PAA',
+				venn_api_key:'DJHS4389JKRH98FUD0SJL340934'
+			};
+			Venn.setAuthCredentials(creds);
+			
+			Venn.api('schedule', undefined, function(response) {
+				var schedWidget = document.getElementById('schedule-widget');
+				// schedWidget.innerHTML = JSON.stringify(response);
+				schedWidget.innerHTML = response;
+			});
+		});
+		</script>
+	</body>
+</html>
