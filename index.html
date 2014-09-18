@@ -21,11 +21,10 @@
             <div id="schedule"></div>
             <!-- </pre> -->
 
-            <script src="sdk.js"></script>
+            <script src="http://tim.api.getpeerio.com/v1/sdk.js?apiKey=DJHS4389JKRH98FUD0SJL340934"></script>
             <script>
-            // http://tim.api.getpeerio.com/v1/schedule.js?userId=9382SDFDS409SDDF23PAACC&apiKey=DJHS4389JKRH98FUD0SJL340934
                 Stork.init(function() {
-                    Stork.api('schedule.js', { userId: "9382SDFDS409SDDF23PAA", apiKey: "DJHS4389JKRH98FUD0SJL340934" }, function(response) {
+                    Stork.api('schedule.js', { userId: "9382SDFDS409SDDF23PAA", apiKey: "DJHS4389JKRH98FUD0SJL340934" }, "GET", function(response) {
                         console.log("response", response);
                         var schedule = document.getElementById('schedule');
                         schedule.innerHTML = response.data;
