@@ -1,43 +1,29 @@
 <!DOCTYPE html>
 <html>
-    <head>
-        
-        <title>Third-party JavaScript</title>
-        <!-- <link href="/examples/common/css/bootstrap.css" rel="stylesheet" type="text/css"/> -->
-        <!-- <link href="/examples/common/css/styles.css" rel="stylesheet" type="text/css"/> -->
+    <head>    
+        <title>Third-party JavaScript</title>   
+        <!-- <script src=></script>   -->
+        <!-- <link rel="stylesheet" type="text/css" href="//maxcdn.bootstrapcdn.com/bootstrap/3.2.0/css/bootstrap.min.css">    -->
         
     </head>
 
     <body>
         <div class="container">
-    
+            <!-- <link rel="stylesheet" type="text/css" href="style.css"> -->
             <div class="page-header">
-                <h1>Third Party Marketplace</h1>
+                <h1>Third Party Marketplace!</h1>
             </div>
 
             <div id="venn-schedule"></div>
+
+            <script src="http://tim.api.getpeerio.com/v1/sdk.js?userId=9382SDFDS409SDDF23PAA&apiKey=DJHS4389JKRH98FUD0SJL340934"></script>
             <script>
-                var config = {
-                    userId: "9382SDFDS409SDDF23PAA",
-                    apiKey: "DJHS4389JKRH98FUD0SJL340934"
-                };
-                (function() {
-                    var xhrObj = new XMLHttpRequest() || new ActiveXObject("Microsoft.XMLHTTP");
-                    xhrObj.open('GET', "//tim.api.getpeerio.com/v1/sdk.js?userId="+ config.userId + "&apiKey=" + config.apiKey, false);
-                    xhrObj.send(null);
-                    eval(xhrObj.responseText);
-                    Stork.init(function() {
-                        Stork.api('schedule.js', { userId: config.userId, apiKey: config.apiKey }, "GET", function(response) {
-                            document.getElementById('venn-schedule').innerHTML = response.data;
-                        });
+                Stork.init(function() {
+                    Stork.api('schedule.js', { userId: "9382SDFDS409SDDF23PAA", apiKey: "DJHS4389JKRH98FUD0SJL340934" }, "GET", function(response) {
+                        document.getElementById('venn-schedule').innerHTML = response.data;
                     });
-                })();
+                });
             </script>
-
-
-            <div class="footer">
-                <a href="http://thirdpartyjs.com">Third-party JavaScript</a> is written by Ben Vinegar and Anton Kovalyov. Available via <a href="http://manning.com/vinegar">Manning Publishing</a>.
-            </div>
         </div>
     </body>
 </html>
