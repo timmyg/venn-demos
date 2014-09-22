@@ -18,8 +18,8 @@
 
             <script src="http://tim.api.getpeerio.com/v1/sdk.js?userId=9382SDFDS409SDDF23PAA&apiKey=DJHS4389JKRH98FUD0SJL340934"></script>
             <script>
-                Stork.init(function() {
-                    Stork.api('schedule.js', { userId: "9382SDFDS409SDDF23PAA", apiKey: "DJHS4389JKRH98FUD0SJL340934" }, "GET", function(response) {
+                Venn.init(function() {
+                    Venn.api('schedule.js', { userId: "9382SDFDS409SDDF23PAA", apiKey: "DJHS4389JKRH98FUD0SJL340934" }, "GET", function(response) {
                         document.getElementById('venn-schedule').innerHTML = response.data;
                     });
                 });
