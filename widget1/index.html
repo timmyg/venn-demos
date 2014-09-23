@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html>
+    <head>    
+        <title>Third-party Marketplace</title>   
+        <!-- <script src=></script>   -->
+        <!-- <link rel="stylesheet" type="text/css" href="//maxcdn.bootstrapcdn.com/bootstrap/3.2.0/css/bootstrap.min.css">    -->
+        
+    </head>
+
+    <body>
+        <div class="container">
+            <!-- <link rel="stylesheet" type="text/css" href="style.css"> -->
+            <div class="page-header">
+                <h1>Third Party Marketplace</h1>
+            </div>
+            <h3>My Schedule (Widget #1)</h3>
+            <div id="venn-schedule"></div>
+            <script src="http://api-tim.getvenn.io/v1/sdk.js?userId=9382SDFDS409SDDF23PAA&apiKey=DJHS4389JKRH98FUD0SJL340934"></script>
+            <script>
+                Venn.init(function() {
+                    Venn.api('schedule.js', { userId: "9382SDFDS409SDDF23PAA", apiKey: "DJHS4389JKRH98FUD0SJL340934" }, "GET", function(response) {
+                        document.getElementById('venn-schedule').innerHTML = response.data;
+                    });
+                });
+            </script>
+
+        </div>
+    </body>
+</html>

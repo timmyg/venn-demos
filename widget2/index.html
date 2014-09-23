@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html>
+    <head>    
+        <title>Third-party Marketplace</title>   
+        <!-- <script src=></script>   -->
+        <!-- <link rel="stylesheet" type="text/css" href="//maxcdn.bootstrapcdn.com/bootstrap/3.2.0/css/bootstrap.min.css">    -->
+        
+    </head>
+
+    <body>
+        <div class="container">
+
+            <h3>Pick Times (Widget #2)</h3>
+            <div id="venn-picktimes"></div>
+            <script src="http://api-tim.getvenn.io/v1/sdk.js?userId=9382SDFDS409SDDF23PAA&apiKey=DJHS4389JKRH98FUD0SJL340934&txnId=txnid1234&inviterUserId=I239234kJHFDDS92384"></script>
+            <script>
+                Venn.init(function() {
+                    Venn.setCoords( [
+                        "1411 Vine St. Cincinnati, OH 45202",
+                        "45040"
+                    ]
+                    );
+                    Venn.api('pickmeetup.js', { 
+                        userId: "9382SDFDS409SDDF23PAA", 
+                        apiKey: "DJHS4389JKRH98FUD0SJL340934", 
+                        inviterUserId: "I239234kJHFDDS92384", 
+                        addresses: Venn.getCoords(), 
+                        txnId: "txnid1234" 
+                        }, "GET", function(response) {
+                        document.getElementById('venn-picktimes').innerHTML = response.data;
+                    });
+                });
+            </script>
+        </div>
+    </body>
+</html>
