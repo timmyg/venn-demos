@@ -1,5 +1,27 @@
+/* Helpers - Non-Venn - START */
+.clearfix {
+  overflow: auto; 
+  zoom: 1;
+
+}
+
+
+
+/* Helpers - Non-Venn - END */
+
 .v-widget {
 		margin: 10px;
+		border: 1px solid #cecece;
+		overflow: auto;
+		/* 
+		 * v-widget houses all other Venn widgets
+		 * and is given Overflow: Auto so that it 
+		 * forces them to take up their entire
+		 * height and width. With out Overflow: auto
+		 * things colapse on themselves and 
+		 * padding and margins do not function as
+		 * expect. This is the same as a 'Clearfix'
+		 */
 	}
 	.v-widget-header {
 		background-color: #f5f5f5; /* Changes the background color of the header */
@@ -41,11 +63,15 @@
 		.v-btn-default {
 			color: #333;
 			background-color: #fff;
-						border-color: #ccc;			/* Gray */
+			border-color: #ccc;					/* Gray */
 		}
 		.v-btn-submit {
 			color: white;
-				background-color: #3fbc6e; 	/* Green */
+			background-color: #3fbc6e; 			/* Green */
+		}
+		.v-btn-back {
+			color: white;
+			background-color: #cc5656; 			/* Red */
 		}
 
 
