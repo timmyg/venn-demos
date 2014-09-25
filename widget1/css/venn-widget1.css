@@ -1,13 +1,7 @@
 /*------------------------------------*\
-Venn Scheduler - CSS
+	Venn Scheduler - CSS
 \*------------------------------------*/
-.v-scheduler {
-	/*
-	* This selector is specifically used for moving
-	* and controlling
-	*/
-}
-.venn-scheduler-rangePicker {
+#venn-schedule {
 	max-width: 750px;
 	/*
 	* This is a specific selector for noting a Venn
@@ -18,6 +12,13 @@ Venn Scheduler - CSS
 	* in the intended space. You can also change
 	* remove the width and add a selector class
 	* from Bootstrap or Foundation
+	*/
+}
+
+.v-scheduler {
+	/*
+	* This selector is specifically used for moving
+	* and controlling
 	*/
 }
 .v-scheduler-layout {

@@ -1,8 +1,7 @@
 /*------------------------------------*\
 	Venn Time Picker - CSS
 \*------------------------------------*/
-
-.venn-picker-rangePicker {
+#venn-timepicker {
 	max-width: 750px;
 	min-width: 525px;
 	/*
@@ -16,45 +15,6 @@
 	* from Bootstrap or Foundation
 	*/
 }
-	/*------------------------------------*\
-		Forward & Backward Controls - CSS
-	\*------------------------------------*/
-
-	.v-goback {
-		width: 10%;
-		max-width: 100px;
-		float: left;
-		height: auto;
-	}
-		.v-btn-pervious {
-			height: 50px;
-			width: 50px;
-			background-color: red;
-			/* Centers it Horizontally and Vertically 
-			 * You will also need to edit "v-btn-next"
-			 */
-			  margin-top: 130px;
-			 margin-left: auto;
-			margin-right: auto;
-		}
-	.v-goforward {
-		width: 10%;
-		max-width: 100px;
-		float: left;
-		height: auto;
-	}
-		.v-btn-next {
-			height: 50px;
-			width: 50px;
-			background-color: blue;
-			/* Centers it Horizontally and Vertically 
-			 * You will also need to edit "v-btn-previous"
-			 */
-			  margin-top: 130px;
-			 margin-left: auto;
-			margin-right: auto;
-		}
-
 	/*------------------------------------*\
 		Timepicking Grid & Availability - CSS
 	\*------------------------------------*/
@@ -148,6 +108,44 @@
 						display: block;
 						cursor: pointer;
 					}
+	/*------------------------------------*\
+		Forward & Backward Controls - CSS
+	\*------------------------------------*/
+
+	.v-goback {
+		width: 10%;
+		max-width: 100px;
+		float: left;
+		height: auto;
+	}
+		.v-btn-pervious {
+			height: 50px;
+			width: 50px;
+			background-color: red;
+			/* Centers it Horizontally and Vertically 
+			 * You will also need to edit "v-btn-next"
+			 */
+			  margin-top: 130px;
+			 margin-left: auto;
+			margin-right: auto;
+		}
+	.v-goforward {
+		width: 10%;
+		max-width: 100px;
+		float: left;
+		height: auto;
+	}
+		.v-btn-next {
+			height: 50px;
+			width: 50px;
+			background-color: blue;
+			/* Centers it Horizontally and Vertically 
+			 * You will also need to edit "v-btn-previous"
+			 */
+			  margin-top: 130px;
+			 margin-left: auto;
+			margin-right: auto;
+		}
 
 /*------------------------------------*\
 	Venn Location Reco Picker - CSS
