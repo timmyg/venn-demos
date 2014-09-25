@@ -1,0 +1,82 @@
+/*------------------------------------*\
+Venn Scheduler - CSS
+\*------------------------------------*/
+.v-scheduler {
+	/*
+	* This selector is specifically used for moving
+	* and controlling
+	*/
+}
+.venn-scheduler-rangePicker {
+	max-width: 750px;
+	/*
+	* This is a specific selector for noting a Venn
+	* widget called "Range Picker" which is part of
+	* the Scheduling tools.
+	*
+	* Feel free to change width to allow it to fit
+	* in the intended space. You can also change
+	* remove the width and add a selector class
+	* from Bootstrap or Foundation
+	*/
+}
+.v-scheduler-layout {
+	border: 1px solid #cecece;
+	text-align: center;
+	-webkit-border-radius: 5px;
+	-moz-border-radius: 5px;
+	border-radius: 5px;
+}
+	th {
+		text-align: center;
+		padding-top: 10px;
+		padding-bottom: 10px;
+		padding-left: 5px;
+		padding-right: 5px;
+		width: 91px;
+		height: 60px;
+		border-right: 1px solid #cecece;
+		
+		overflow: hidden;
+	}
+	td {
+		border-top: 1px solid #cecece;
+		border-left: 1px solid #cecece;
+		padding: 12px;
+	}
+		td.checked {
+			background-color: #def0f5;
+		}
+		.v-timeFrame {
+		}
+			.v-timeFrame .v-timeOfDay {
+				color: #333;
+				font-size: 16px;
+				font-weight: bold;
+			}
+			.v-timeFrame .v-timeRange {
+				color: #999;
+				font-size:11px;
+			}
+/*	input[type=checkbox] {
+	display:none;
+
+}
+input[type=checkbox] + label {
+	background: #999;
+	height: 16px;
+	width: 16px;
+	display:inline-block;
+	padding: 0 0 0 0px;
+	color: rgba(0,0,0,0.0);
+}
+input[type=checkbox]:checked + label {
+	background: #0080FF;
+	height: 16px;
+	width: 16px;
+	display:inline-block;
+	padding: 0 0 0 0px;
+}*/
+.v-scheduler-controls {
+	margin: 10px 0px 10px 0px;
+}
