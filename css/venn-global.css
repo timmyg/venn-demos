@@ -1,5 +1,5 @@
 /* Helpers - Non-Venn - START */
-.clearfix {
+.v-widget .clearfix {
   overflow: auto; 
   zoom: 1;
 
