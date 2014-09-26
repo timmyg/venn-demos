@@ -15,14 +15,14 @@
             <div id="venn-schedule"></div>
             <script>
                 config = {
-                    apikey: "DJHS4389JKRH98FUD0SJL340934",
-                    userid: "E9382SDFDS409SDDF23PAA"
+                    apikey: "8fe1c316bc788cc8c022",
+                    userid: "KDSJKDSLJFDS0980990890833"
                 }
                 function vennLoaded(){
                     /* anything you want to do after widget has loaded */
                 };
 
-                var script = document.createElement('script'); script.onload = function() {Venn.init(function() {Venn.api('schedule.js', { userId: config.userid, apiKey: config.apikey }, "GET", function(response) {document.getElementById('venn-schedule').innerHTML = response.data; Venn.scheduleLoaded(); vennLoaded(); }); }); }; script.src = "http://api-tim.getvenn.io/v1/sdk.js?userId="+config.userid+"&apiKey="+config.apikey; document.getElementsByTagName('head')[0].appendChild(script);
+                var script = document.createElement('script'); script.onload = function() {Venn.init(function() {Venn.api('schedule.js', { userid: config.userid, apikey: config.apikey }, "GET", function(response) {document.getElementById('venn-schedule').innerHTML = response.data; Venn.scheduleLoaded(); vennLoaded(); }); }); }; script.src = "//api.getvenn.io/v1/sdk.js?userid="+config.userid+"&apikey="+config.apikey; document.getElementsByTagName('head')[0].appendChild(script);
             </script>
 
 

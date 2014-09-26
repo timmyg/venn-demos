@@ -15,7 +15,7 @@
                 config = {
                     apikey: "DJHS4389JKRH98FUD0SJL340934",
                     userid: "EE9382SDFDS409SDDF23PAA",
-                    inviteruserid: "EE9382SDFDS409SDDF23PAA",
+                    authoruserid: "EE9382SDFDS409SDDF23PAA",
                     txnid: "KLJSD20384lKHJDJKFSHJD",
                     addresses: [
                         "1411 Vine St. Cincinnati, OH 45202",
@@ -29,7 +29,7 @@
                 };
 
 
-                var script = document.createElement('script'); script.onload = function() {Venn.init(function() {Venn.api('pickmeetup.js', { userId: config.userid, apiKey: config.apikey, inviterUserId: config.inviteruserid, addresses: config.addresses, txnId: config.txnid }, "GET", function(response) {document.getElementById('venn-picktimes').innerHTML = response.data; Venn.picktimesLoaded(); vennLoaded();  Venn.setCoords(config.addresses);  }); }); }; script.src = "http://api-tim.getvenn.io/v1/sdk.js?userId="+config.userid+"&apiKey="+config.apikey+"&txnId="+config.txnid+"&inviterUserId="+config.inviteruserid; document.getElementsByTagName('head')[0].appendChild(script);
+                var script = document.createElement('script'); script.onload = function() {Venn.init(function() {Venn.api('pickmeetup.js', { userid: config.userid, apikey: config.apikey, authoruserid: config.authoruserid, addresses: config.addresses, txnid: config.txnid }, "GET", function(response) {document.getElementById('venn-picktimes').innerHTML = response.data; Venn.picktimesLoaded(); vennLoaded();  Venn.setCoords(config.addresses);  }); }); }; script.src = "//api.getvenn.io/v1/sdk.js?userid="+config.userid+"&apikey="+config.apikey+"&txnid="+config.txnid+"&authoruserid="+config.authoruserid; document.getElementsByTagName('head')[0].appendChild(script);
 
 
 
