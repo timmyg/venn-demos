@@ -1,0 +1,118 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>Schedule It</title>
+	<link href="//maxcdn.bootstrapcdn.com/bootstrap/3.2.0/css/bootstrap.min.css" rel="stylesheet">
+	<script src="https://code.jquery.com/jquery-1.11.1.min.js"></script>
+</head>
+<body>
+
+	<div class="container">
+		<div class="col-md-12">
+			<h2 class="text-center">Set Your Schedule</h2>
+			<!-- <div id="1"></div> -->
+			
+
+
+
+		</div>
+		<!-- <div class="col-md-12"> -->
+				<!-- <h2 class="text-center">Pick a Time</h2> -->
+				<!-- <div id="2"></div> -->
+
+
+		<!-- </div> -->
+		<!-- <div class="col-md-12"> -->
+			<!-- <h2 class="text-center">Meeting Set!</h2> -->
+			<!-- <div id="3"></div> -->
+		<!-- </div> -->
+	</div>
+
+<script>
+
+		var writeIframe = function (html, id) {
+			console.log("iframing");
+	        html = '<!DOCTYPE html>' + '<html><head><title>Rendered HTML from Pattern</title></head><body>' + html + '</body></html>';
+	        iframe = $('<iframe name="1"></iframe>');
+			$('body').append(iframe);
+			iframe.contents().find('body').html(html);
+	    }
+
+	    var html1="";
+		html1 += "		    <div id=\"venn-schedule\" class=\"venn\"><\/div>";
+		html1 += "            <script>";
+		html1 += "                config1 = {";
+		html1 += "                    apikey: \"a1b5b35d380ce08c631c\",";
+		html1 += "                    userid: \"seller123\"";
+		html1 += "                };";
+		html1 += "                function vennLoaded(){";
+		html1 += "                    \/* anything you want to do after widget has loaded *\/";
+		html1 += "                };";
+		html1 += "";
+		html1 += "                var script = document.createElement('script'); script.onload = function() {Venn.init(function() {Venn.api('schedule.js', { userid: config1.userid, apikey: config1.apikey }, \"GET\", function(response) {document.getElementById('venn-schedule').innerHTML = response.data; Venn.scheduleLoaded(); vennLoaded(); }); }); }; script.src = \"\/\/api.getvenn.io\/v1\/sdk.js?userid=\"+config1.userid+\"&apikey=\"+config1.apikey; document.getElementsByTagName('head')[0].appendChild(script);";
+		html1 += "            <\/script>";
+
+
+		// var html2="";
+		// html2 += "		<div id=\"venn-picktimes\" class=\"venn\"><\/div>";
+		// html2 += "        <script>";
+		// html2 += "            config2 = {";
+		// html2 += "                apikey: \"a1b5b35d380ce08c631c\",";
+		// html2 += "                userid: \"buyer456\",";
+		// html2 += "                authoruserid: \"seller123\",";
+		// html2 += "                txnid: \"KLJSD20384lKHJDJKFSHJD\",";
+		// html2 += "                addresses: [";
+		// html2 += "                    \"45040\",";
+		// html2 += "                    \"45208\"";
+		// html2 += "                ]";
+		// html2 += "            };";
+		// html2 += "            function vennLoaded(){";
+		// html2 += "                \/* anything you want to do after widget has loaded *\/";
+		// html2 += "            };";
+		// html2 += "            \/*do no edit anything below this line*\/";
+		// html2 += "            var script = document.createElement('script'); script.onload = function() {Venn.init(function() {Venn.api('pickmeetup.js', { userid: config2.userid, apiKey: config2.apikey, authoruserid: config2.authoruserid, addresses: config2.addresses, txnid: config2.txnid }, \"GET\", function(response) {document.getElementById('venn-picktimes').innerHTML = response.data; Venn.picktimesLoaded(); vennLoaded();  Venn.setCoords(config2.addresses);  }); }); }; script.src = \"\/\/api.getvenn.io\/v1\/sdk.js?userid=\"+config2.userid+\"&apikey=\"+config2.apikey+\"&txnid=\"+config2.txnid+\"&authoruserid=\"+config2.authoruserid; document.getElementsByTagName('head')[0].appendChild(script);";
+		// html2 += "        <\/script>";
+
+
+
+
+    	writeIframe(html1, "1");
+		// writeIframe(html2, "2");
+		// writeIframe(html3, "#3");
+
+</script>
+
+
+
+</body>
+</html>
+
+
+
+
+<!DOCTYPE html>
+<html>
+    <head>    
+        <title>Third-party Marketplace</title>   
+    </head>
+
+    <body>
+
+
+        <h3>Hi this is a marketplace</h3>
+
+            <div id="venn-schedule" class="venn"></div>
+            <script>
+                config = {
+                    apikey: "4650ffd48ab8b077eccb",
+                    userid: "KDSJKDSLJFDS0980990890833"
+                };
+                function vennLoaded(){
+                    /* anything you want to do after widget has loaded */
+                };
+
+                var script = document.createElement('script'); script.onload = function() {Venn.init(function() {Venn.api('schedule.js', { userid: config.userid, apikey: config.apikey }, "GET", function(response) {document.getElementById('venn-schedule').innerHTML = response.data; Venn.scheduleLoaded(); vennLoaded(); }); }); }; script.src = "//api.getvenn.io/v1/sdk.js?userid="+config.userid+"&apikey="+config.apikey; document.getElementsByTagName('head')[0].appendChild(script);
+            </script>
+
+    </body>
+</html>

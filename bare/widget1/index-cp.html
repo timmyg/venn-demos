@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html>
+    <head>    
+        <title>Third-party Marketplace</title>   
+        <script src="https://code.jquery.com/jquery-1.11.1.min.js"></script>
+    </head>
+
+    <body>
+
+        <h4>Hi</h4>
+
+        <h6></h6>
+
+    </body>
+
+    <script>
+
+        var str="";
+        str += "            <div id=\"venn-schedule\" class=\"venn\"><\/div>";
+        str += "            <script>";
+        str += "                config = {";
+        str += "                    apikey: \"4650ffd48ab8b077eccb\",";
+        str += "                    userid: \"KDSJKDSLJFDS0980990890833\"";
+        str += "                };";
+        str += "                function vennLoaded(){";
+        str += "                    \/* anything you want to do after widget has loaded *\/";
+        str += "                };";
+        // str += "";
+        str += "                var script = document.createElement('script'); script.onload = function() {Venn.init(function() {Venn.api('schedule.js', { userid: config.userid, apikey: config.apikey }, \"GET\", function(response) {document.getElementById('venn-schedule').innerHTML = response.data; Venn.scheduleLoaded(); vennLoaded(); }); }); }; script.src = \"\/\/api.getvenn.io\/v1\/sdk.js?userid=\"+config.userid+\"&apikey=\"+config.apikey; document.getElementsByTagName('head')[0].appendChild(script);";
+        str += "            <\/script>";
+
+        var writeIframe = function (strVar) {
+            var newIframe = document.createElement('iframe');
+            newIframe.width = '100%'; newIframe.height = '100%';
+            newIframe.src = 'about:blank'; 
+            document.body.appendChild(newIframe);
+            var getHTML = strVar;
+            var myContent = '<!DOCTYPE html>' + '<html><head><title>Rendered HTML from Pattern</title></head><body>' + getHTML + '</body></html>';
+            // newIframe.contentWindow.document.open('text/html', 'replace');
+            // newIframe.contentWindow.document.write(myContent);
+            // newIframe.contentWindow.document.close();
+            $("h6").append(myContent);
+        }
+
+
+        writeIframe(str);
+
+
+    </script>
+</html>

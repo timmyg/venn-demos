@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html>
+    <head>    
+		<title>Schedule It</title>
+		<link href="//maxcdn.bootstrapcdn.com/bootstrap/3.2.0/css/bootstrap.min.css" rel="stylesheet">
+		<script src="https://code.jquery.com/jquery-1.11.1.min.js"></script>
+		<link rel="stylesheet" type="text/css" href="style.css">
+    </head>
+
+    <body>
+    	<div class="container">
+	        <h3>This is a seller's profile</h3>
+
+	        <div id="venn-schedule" class="venn text-cent"></div>
+	        <script>
+	            config = {
+	                apikey: "a1b5b35d380ce08c631c",
+	                userid: "seller123"
+	            };
+
+	            var script = document.createElement('script'); script.onload = function() {Venn.init(function() {Venn.api('schedule.js', { userid: config.userid, apikey: config.apikey }, "GET", function(response) {document.getElementById('venn-schedule').innerHTML = response.data; Venn.scheduleLoaded(); if (typeof vennLoaded == 'function') { vennLoaded(); } }); }); }; script.src = "//api.getvenn.io/v1/sdk.js?userid="+config.userid+"&apikey="+config.apikey; document.getElementsByTagName('head')[0].appendChild(script);
+	        </script>
+	        <div class="text-center">
+	        	<a href="./pick.html">
+	        		<button class="btn btn-lg btn-default">Next</button>
+	        	</a>
+	        </div>
+	    </div>
+    </body>
+</html>
