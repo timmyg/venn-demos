@@ -8,14 +8,17 @@
     </head>
 
     <body>
+
+    	<!-- used just for setting times -->
+
     	<div class="container">
 	        <h3>This is a seller's profile</h3>
 
 	        <div id="venn-schedule" class="venn text-cent"></div>
 	        <script>
 	            config = {
-	                apikey: "67c1ba179ddf3d05fcf1",
-	                userid: "seller123"
+	                apikey: "ef7b3ca8b27d2b3690a14a84",
+	                userid: "alwayshastimes888"
 	            };
 
 	            var script = document.createElement('script'); script.onload = function() {Venn.init(function() {Venn.api('schedule.js', { userid: config.userid, apikey: config.apikey }, "GET", function(response) {document.getElementById('venn-schedule').innerHTML = response.data; Venn.scheduleLoaded(); if (typeof vennLoaded == 'function') { vennLoaded(); } }); }); }; script.src = "//api.getvenn.io/v1/sdk.js?userid="+config.userid+"&apikey="+config.apikey; document.getElementsByTagName('head')[0].appendChild(script);
