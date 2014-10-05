@@ -160,3 +160,11 @@ venn-widget {
 	margin: 0px auto 0px auto;
 	text-align: center;
 }
+
+.alert {
+    position: fixed;
+    top: 10px;
+    left: 25%;
+    width: 50%;
+    z-index: 9999;
+}

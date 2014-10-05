@@ -6,10 +6,9 @@ $(function() {
   		var address2 = $("input#person-2").val();
   		var apiKey = e.currentTarget.dataset.apiKey;
 
-  		if(typeof address1 === 'undefined' || 
-		   typeof address2 === 'undefined' ||
-		   typeof apiKey === 'undefined'){
-		 	return alert("Please fill in all fields");
+  		if( address1 === '' || 
+		    address2 === '' ){
+		 	return toastAlert(".inputs");
 		 }
 		 removeWidget();
 		 loadWiget(address1, address2, apiKey);
@@ -38,8 +37,16 @@ $(function() {
 			script += "</script>";
 
 			$("iframe").remove();
-			$("div.widget-container").append(script);
+			$("div.widget-container").html(script);
 			console.log("appended");
 	}
+
+
+	var toastAlert = function(selector) {
+	  $(".alert" + selector).removeClass("hide");
+	  return window.setTimeout((function() {
+	    return $(".alert" + selector).addClass("hide");
+	  }), 4000);
+	};
 
 });
