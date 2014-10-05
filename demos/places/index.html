@@ -12,13 +12,21 @@
         <h2>Marketplace Recommendations</h2>
 
         <header class="text-center">
-            <input class="input-lg" type="text" id="person-1" value="1411 Vine St. Cincinnati, OH 45202">
-            <input class="input-lg" type="text" id="person-2" value="45040">
+            <div class="user-toggle">
+                <div class="user-container">
+                    <div class="user-image  image-small  posh"></div>
+                    <input class="input-lg" type="text" id="person-1" placeholder="First Zip Code" value="">
+                </div>
+                <div class="user-container">
+                    <div class="user-image  image-small  david"></div>
+                    <input class="input-lg" type="text" id="person-2" placeholder="Second Zip Code" value="">
+                </div>
+            </div>
         </header>
 
         <header>
 
-            <div class="btn-group btn-group-justified">
+            <div class="recommendation-type  btn-group  btn-group-justified">
                 <span class="rec-type btn" id="marketplace" data-api-key="e4cb76da4369f779a144dd28">Marketplace</span>
                 <span class="rec-type btn" id="dating" data-api-key="bc4534ff3ea01108fed09bf3">Dating</span>
                 <span class="rec-type btn" id="professional" data-api-key="6e70893e8a4f3a99883bdd0e">Professional</span>

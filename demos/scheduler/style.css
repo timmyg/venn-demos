@@ -1,0 +1,148 @@
+/* Helpers */
+.clearfix:after {
+     visibility: hidden;
+     display: block;
+     font-size: 0;
+     content: " ";
+     clear: both;
+     height: 0;
+     }
+.clearfix { display: inline-block; }
+/* start commented backslash hack \*/
+* html .clearfix { height: 1%; }
+.clearfix { display: block; }
+/* close commented backslash hack */
+
+
+
+
+
+
+
+/* Main Styles */
+
+body {
+	background-color: #f4f4f4;
+}
+.container-white {
+	background-color: white;
+
+	border-radius: 10px 10px 10px 10px;
+	-moz-border-radius: 10px 10px 10px 10px;
+	-webkit-border-radius: 10px 10px 10px 10px;
+
+	padding: 20px;
+	margin: 20px auto 20px auto;
+
+}
+.left {
+	float: left;
+	width: 25%;
+	text-align: center;
+}
+.user-toggle {
+	display: block;
+}
+	.user-toggle .btn {
+		margin-top: 32px;
+		margin-left: 10px;
+	}
+	.user-container {
+		padding: 20px 0px 20px 0px;
+		width: 40%;
+		float: right;
+	}
+
+	.user-profile {
+		margin-top: 40px;
+
+	}
+	.user-image {
+		border: 10px solid white;
+
+		background-repeat: no-repeat;
+		background-position: center center;
+		height: 150px;
+		width: 150px;
+		background-color: #cecece;
+		margin: 20px auto 0px auto;
+
+
+		border-radius: 100px 100px 100px 100px;
+		-moz-border-radius: 100px 100px 100px 100px;
+		-webkit-border-radius: 100px 100px 100px 100px;
+
+	}	
+		.user-image.image-small {
+			height: 75px;
+			width: 75px;
+			background-size: 100%;
+			float: left;
+
+		}
+		.user-image.posh {
+			background-image: url("img/posh-spice.jpg");
+		}
+		.user-image.david {
+			background-image: url("img/david-b.jpg");
+		}
+	.buyer {
+
+	}
+	.photo {
+		
+	}
+
+.right {
+	float: right;
+	width: 75%;
+	height: 460px;
+}
+
+
+.note {
+	color: #333;
+	background-color: #dff0d8;
+	border: 1px solid green;
+	padding: 0px 20px 20px 20px;
+	margin-top: 20px;
+
+	border-radius: 10px 10px 10px 10px;
+	-moz-border-radius: 10px 10px 10px 10px;
+	-webkit-border-radius: 10px 10px 10px 10px;
+
+}
+
+.v-widget .v-btn.v-btn-submit {
+	padding: 10px 16px 10px 16px;
+}
+/*.btn {
+	margin-bottom: 50px;
+}*/
+.v-widget .v-widget-header {
+	border-left: 1px solid #cecece;
+	border-right: 1px solid #cecece;
+	border-top: 1px solid #cecece;
+}
+.v-widget .row {
+	margin-left: 0px;
+	margin-right: 0px;
+}
+.v-widget #venn-my-timepicker {
+	height: 380px;
+}
+.v-widget .v-timepicker-availability {
+	display: block;
+	overflow: auto;
+	margin: 0px 0px 10px 0px;
+	padding: 0px 0px 15px 0px;
+	position: relative;
+	border: 1px solid #cecece;
+}
+
+.v-widget td {
+	padding: 12px;
+	padding-top: 13px;
+	padding-bottom: 15px;
+}
+}

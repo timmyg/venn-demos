@@ -4,38 +4,64 @@
 		<title>Choose Time</title>
 		<link href="//maxcdn.bootstrapcdn.com/bootstrap/3.2.0/css/bootstrap.min.css" rel="stylesheet">
 		<script src="https://code.jquery.com/jquery-1.11.1.min.js"></script>
+		<link rel="stylesheet" type="text/css" href="style.css">
     </head>
 
     <body>
     	<div class="container">
-	        <h3>This is when you are buying an item</h3>
+    		<div class="note">
+		        <h3>Buyer Page</h3>
 
-	       
-	        <div id="venn-picktimes" class="venn"></div>
-	        <script>
-	            config = {
-	                apikey: "67c1ba179ddf3d05fcf1",
-	                userid: "buyer456",
-	                authoruserid: "seller123",
-	                txnid: "txn09348509348",
-	                addresses: [
-	                    "45040",
-	                    "45208"
-	                ]
-	            };
-	            function vennLoaded(){
-	                /* anything you want to do after widget has loaded */
-	            };
-	            /*do no edit anything below this line*/
-	            var script = document.createElement('script'); script.onload = function() {Venn.init(function() {Venn.api('pickmeetup.js', { userid: config.userid, apiKey: config.apikey, authoruserid: config.authoruserid, addresses: config.addresses, txnid: config.txnid }, "GET", function(response) {document.getElementById('venn-picktimes').innerHTML = response.data; Venn.picktimesLoaded(); if (typeof vennLoaded == 'function') { vennLoaded(); }; Venn.setCoords(config.addresses);  }); }); }; script.src = "//api.getvenn.io/v1/sdk.js?userid="+config.userid+"&apikey="+config.apikey+"&txnid="+config.txnid+"&authoruserid="+config.authoruserid; document.getElementsByTagName('head')[0].appendChild(script);
-	        </script>
+		        <p>As a Buyer, they are asked to choose the speific times from the available time slots. Buyers are able to look at a number of different times and pick them in 30 minute blocks. These times are limited to what the Seller listed as their available ranges.</p>
+		    </div>
 
+		    <div class="user-toggle clearfix">
+			    <div class="user-container">
+		        	<a href="./pick.html">
+		        		<div class="user-image  image-small  david"></div>
+		        		<button class="btn btn-lg  btn-default">Buyer View</button>
+		        	</a>
+		        </div>
 
-	        <div class="text-center">
-	        	<a href="./">
-	        		<button class="btn btn-lg btn-default">Back</button>
-	        	</a>
-	        </div>
+				<div class="user-container">
+		        	<a href="./index.html">
+		        		<div class="user-image  image-small  posh"></div>
+		        		<button class="btn btn-lg btn-default">View Seller Schedule</button>
+		        	</a>
+		        </div>
+		    </div>
+
+  			<div class="container-white clearfix">
+		        <div class="left seller">
+		        	<div class="user-profile">
+		        		<h3 class="user-title">Buyer</h3>
+		        		<div class="user-image david"></div>
+		        		<h4 class="user-name">David B.</h4>
+
+		        	</div>
+		        </div>
+
+		        <div class="right">
+			        <div id="venn-picktimes" class="venn"></div>
+			        <script>
+			            config = {
+			                apikey: "67c1ba179ddf3d05fcf1",
+			                userid: "buyer456",
+			                authoruserid: "seller123",
+			                txnid: "txn09348509348",
+			                addresses: [
+			                    "45040",
+			                    "45208"
+			                ]
+			            };
+			            function vennLoaded(){
+			                /* anything you want to do after widget has loaded */
+			            };
+			            /*do no edit anything below this line*/
+			            var script = document.createElement('script'); script.onload = function() {Venn.init(function() {Venn.api('pickmeetup.js', { userid: config.userid, apiKey: config.apikey, authoruserid: config.authoruserid, addresses: config.addresses, txnid: config.txnid }, "GET", function(response) {document.getElementById('venn-picktimes').innerHTML = response.data; Venn.picktimesLoaded(); if (typeof vennLoaded == 'function') { vennLoaded(); }; Venn.setCoords(config.addresses);  }); }); }; script.src = "//api.getvenn.io/v1/sdk.js?userid="+config.userid+"&apikey="+config.apikey+"&txnid="+config.txnid+"&authoruserid="+config.authoruserid; document.getElementsByTagName('head')[0].appendChild(script);
+			        </script>
+			    </div>
+			</div>
 	    </div>
     </body>
 </html>

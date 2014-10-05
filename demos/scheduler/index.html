@@ -9,22 +9,54 @@
 
     <body>
     	<div class="container">
-	        <h3>This is a seller's profile</h3>
+	        <div class="note">
+		        <h3>Seller's Page</h3>
 
-	        <div id="venn-schedule" class="venn text-cent"></div>
-	        <script>
-	            config = {
-	                apikey: "67c1ba179ddf3d05fcf1",
-	                userid: "seller123"
-	            };
+		        <p>This is an example version the scheduler tool. This is the seller's module. It allows the seller to pick ranges that are best for them to meet to sell their things. The seller can pick time frames and then the buyer can verify the best time that for them that available in that range</p>
+		    </div>
 
-	            var script = document.createElement('script'); script.onload = function() {Venn.init(function() {Venn.api('schedule.js', { userid: config.userid, apikey: config.apikey }, "GET", function(response) {document.getElementById('venn-schedule').innerHTML = response.data; Venn.scheduleLoaded(); if (typeof vennLoaded == 'function') { vennLoaded(); } }); }); }; script.src = "//api.getvenn.io/v1/sdk.js?userid="+config.userid+"&apikey="+config.apikey; document.getElementsByTagName('head')[0].appendChild(script);
-	        </script>
-	        <div class="text-center">
-	        	<a href="./pick.html">
-	        		<button class="btn btn-lg btn-default">Next</button>
-	        	</a>
-	        </div>
+		    <div class="user-toggle  clearfix">
+			    <div class="user-container">
+		        	<a href="./pick.html">
+		        		<div class="user-image  image-small  david"></div>
+		        		<button class="btn btn-lg  btn-default">Buyer View</button>
+		        	</a>
+		        </div>
+
+				<div class="user-container">
+		        	<a href="./index.html">
+		        		<div class="user-image  image-small  posh"></div>
+		        		<button class="btn btn-lg btn-default">View Seller Schedule</button>
+		        	</a>
+		        </div>
+		    </div>
+
+
+    		<div class="container-white  clearfix">
+		        <div class="left seller">
+		        	<div class="user-profile">
+		        		<h3 class="user-title">Seller</h3>
+		        		<div class="user-image  posh"></div>
+		        		<h4 class="user-name">Posh Spice</h4>
+
+		        	</div>
+		        </div>
+
+		        <div class="right">
+			        <div id="venn-schedule" class="venn  text-cent"></div>
+			        <script>
+			            config = {
+			                apikey: "67c1ba179ddf3d05fcf1",
+			                userid: "seller123"
+			            };
+
+			            var script = document.createElement('script'); script.onload = function() {Venn.init(function() {Venn.api('schedule.js', { userid: config.userid, apikey: config.apikey }, "GET", function(response) {document.getElementById('venn-schedule').innerHTML = response.data; Venn.scheduleLoaded(); if (typeof vennLoaded == 'function') { vennLoaded(); } }); }); }; script.src = "//api.getvenn.io/v1/sdk.js?userid="+config.userid+"&apikey="+config.apikey; document.getElementsByTagName('head')[0].appendChild(script);
+			        </script>
+			    </div>
+
+		        
+		    </div>
+
 	    </div>
     </body>
 </html>
