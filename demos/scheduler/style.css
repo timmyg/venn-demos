@@ -129,7 +129,7 @@ body {
 	margin-right: 0px;
 }
 .v-widget #venn-my-timepicker {
-	height: 380px;
+	/*height: 380px;*/
 }
 .v-widget .v-timepicker-availability {
 	display: block;

@@ -1,0 +1,30 @@
+.color-primary {
+	color: #df5e3b;
+}
+
+img {
+	width: 150px;
+}
+
+.inline {
+	display: inline;
+}
+.demo-title {
+	padding: 20px;
+}
+
+.hover:hover {
+	opacity: .8;
+}
+
+a:hover {
+	text-decoration: none;
+}
+
+.demos li {
+	margin: 30px 0;
+}
+
+.jumbotron {
+	margin: 50px;
+}

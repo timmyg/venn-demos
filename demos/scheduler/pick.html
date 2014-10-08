@@ -12,7 +12,9 @@
     		<div class="note">
 		        <h3>Buyer Page</h3>
 
-		        <p>As a Buyer, they are asked to choose the speific times from the available time slots. Buyers are able to look at a number of different times and pick them in 30 minute blocks. These times are limited to what the Seller listed as their available ranges.</p>
+		        <p>
+		        	This is where a user can choose a specific block of time from a user's schedule to set a meeting. Optionally, you can configure the widget to suggest places as well.
+		        </p>
 		    </div>
 
 		    <div class="user-toggle clearfix">
@@ -44,11 +46,22 @@
 		        <div class="right">
 			        <div id="venn-picktimes" class="venn"></div>
 			        <script>
+
+
+						function getRandomId() {
+						    var text = "";
+						    var possible = "ABCDEFGHIJKLMNOPQRSTUVWXYZabcdefghijklmnopqrstuvwxyz0123456789";
+						    for( var i=0; i < 21; i++ )
+						        text += possible.charAt(Math.floor(Math.random() * possible.length));
+						    return text;
+						}
+
+
 			            config = {
 			                apikey: "67c1ba179ddf3d05fcf1",
 			                userid: "buyer456",
 			                authoruserid: "seller123",
-			                txnid: "txn09348509348",
+			                txnid: getRandomId(),
 			                addresses: [
 			                    "45040",
 			                    "45208"
