@@ -2,35 +2,40 @@
 <html>
 <head>
 	<title>Venn Demos</title>
-	<link href="//maxcdn.bootstrapcdn.com/bootstrap/3.2.0/css/bootstrap.min.css" rel="stylesheet">
+	<link href="http://maxcdn.bootstrapcdn.com/bootstrap/3.2.0/css/bootstrap.min.css" rel="stylesheet">
 	<script src="https://code.jquery.com/jquery-1.11.1.min.js"></script>
 	<link rel="stylesheet" type="text/css" href="style.css">
 </head>
 <body>
 	<div class="container">
-		<div class="jumbotron clearfix">
-			<h1 class="text-center color-primary">Venn Demos</h1>
+		<div class="containerdashbaord row col-xs-12 col-sm-10 col-sm-offset-1 col-md-8 col-md-offset-2">
+
+			<h1 class="text-center">Venn Demos</h1>
 			<p class="lead text-center">Check out the demos below to see Venn technology in action</p>
-			<ul class="list-unstyled text-center demos col-sm-6 col-sm-offset-3">
-				<li class="col-sm-6 hover">
-					<a href="scheduler">
-						<div class="">
-							<img src="img/venn-schedule-icon-hex-orange.png">
-							<h3 class="color-primary inline demo-title">Schedule</h3>
-						</div>	
-					</a>
-				</li>
-				<li class="col-sm-6 hover">
-					<a href="places">
-						<div class="">
-							<img src="img/venn-locate-icon-hex-orange.png">
-							<h3 class="color-primary inline demo-title">Locate</h3>
+			<div class="demo-button-container">
+				<h3>Current Demos</h3>
+
+				<div class="demo-button-box col-xs-12 col-sm-5 col-sm-offset-0 col-md-6 col-md-offset-0">
+					<a href="scheduler" class="clickable">
+						<div class="demo-button  col-xs-12">
+							<div class="graphic-container  schedule"></div>
+							<h5 class="text-center">Venn<b>Schedule</b></h5>
+							<p class="subtext">&nbsp;</p>
 						</div>
 					</a>
-				</li>		
-			</ul>
+				</div>
+				
+				<div class="demo-button-box col-xs-12 col-sm-5 col-sm-offset-2 col-md-6 col-md-offset-0">
+					<a href="places" class="clickable">
+						<div class="demo-button  col-xs-12">
+							<div class="graphic-container  locate"></div>
+							<h5 class="text-center">Venn<b>Locate</b></h5>
+							<p class="subtext">&nbsp;</p>
+						</div>
+					</a>
+				</div>
+			</div>
 		</div>
 	</div>
-
 </body>
 </html>
