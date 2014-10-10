@@ -1,0 +1,129 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+
+  <title>Account</title>
+
+  <link rel="stylesheet" href="css/bootstrap.min.css" />
+  <link rel="stylesheet" href="http://netdna.bootstrapcdn.com/font-awesome/4.0.3/css/font-awesome.css" />
+  <link rel="stylesheet" href="css/styles.css" type="text/css" />
+  <script>
+    var monthNames = [ "January", "February", "March", "April", "May", "June",
+    "July", "August", "September", "October", "November", "December" ];
+    var weekday = new Array(7);
+    weekday[0]=  "Sunday";
+    weekday[1] = "Monday";
+    weekday[2] = "Tuesday";
+    weekday[3] = "Wednesday";
+    weekday[4] = "Thursday";
+    weekday[5] = "Friday";
+    weekday[6] = "Saturday";
+  </script>
+  
+  <link href="css/hopscotch.min.css" rel="stylesheet"></link>
+  <script src="js/hopscotch.js"></script>
+  <script src="js/main-tour.js"></script>
+</head>
+<body>
+  <div class="container">
+    <div class="row">
+      <div class="col-lg-2">
+        <header>
+          <div id="logo">
+            <a href="index.html"><img id="homepage" src="images/logo.png" alt="Divvy Logo"></a>
+          </div>
+        </header><!-- header -->
+        <div id="user-info">
+          <p>Welcome Guest!</p>
+          <img class="avatar" src="images/nessie_headshot.png" style="width: 64px; height: 64px; border-radius: 10px; margin-bottom: 10px;" />
+          <a class="btn btn-primary">MY POSTS</a> <a class="btn btn-primary" href="/me"><i class="fa fa-pencil fa-lg"></i></a> <a class="btn btn-primary" href="/logout"><i class="fa fa-arrow-circle-o-right fa-lg"></i></a>
+        </div>
+      </div><!-- end col-lg-2 -->
+
+
+      <div class="col-lg-8">
+
+        <div id="venn-schedule" class="venn"></div>
+
+        <h2>Personal Details:</h2>
+        <form role="form" id="edit-user-form" action="/update" method="POST">
+
+          <input type="text" name="name" placeholder="Name" value="<%= user.name || '' %>" />
+
+          <input type="text" name="email" placeholder="Email" value="<%= user.email || '' %>" />
+
+          <input type="text" name="city" placeholder="City" value="<%= user.location.city || '' %>" />
+
+          <input type="text" name="state" placeholder="State" value="<%= user.location.state || '' %>">
+
+          <input type="text" name="zip" placeholder="Zip" value="<%= user.location.zip || '' %>">
+
+          <label for="skills">Skills</label>
+          <select multiple class="multiselect" id="postSkills" name="skills"></select>
+
+          <label for="interests">Interests</label>
+          <select multiple class="multiselect" id="postInterests" name="interests"></select>
+
+          <input class="btn btn-primary" type="submit" value="Submit" />
+
+        </form>
+
+        <div class="filter-group">
+          <a class="btn" data-q="collected">COLLECTED</a>
+          <a class="btn selected" data-q="posted">POSTED</a>
+        </div>
+
+        <div class="col-lg-12">
+          <h1>Posts:</h1>
+          <table class="profile-posts table table-striped">
+            <tr><td><a href="/listing/<%- posts[i]._id %>"><div>
+              <h3><%= posts[i].title %></h3>
+              <span class="task">"<%= posts[i].task %>"</span><br />
+              <span class="date"><%= weekday[posts[i].date.getDay()] + " " + monthNames[posts[i].date.getMonth()] + " " + posts[i].date.getDate() + ", " + posts[i].date.getFullYear() %></span>
+            </div></a></td></tr>
+          </table>
+        </div>
+
+      </div><!-- end row -->
+    </div><!-- end container -->
+    <footer>
+      <img src="images/nessie.png" />
+    </footer>
+
+    <script>
+      var user_skills = [];
+      var user_interests = [];
+
+      // <% for (var i in user.skills) { %>
+        // user_skills.push('<%= user.skills[i] %>');
+        // <% } %>
+
+        // <% for (var i in user.interests) { %>
+          // user_skills.push('<%= user.interests[i] %>');
+          // <% } %>
+        </script>
+
+        <script src="http://code.jquery.com/jquery-1.11.1.min.js"></script>
+        <script src="/js/bootstrap.min.js" type="text/javascript"></script>
+        <script src="/js/bootstrap-multiselect.js" type="text/javascript"></script>
+        <script src="/js/account.js"></script>
+        <script>
+          $(document).ready(function() {
+            $('.multiselect').multiselect();
+          });
+        </script>
+
+        <script>
+          config = {
+            apikey: "c674be576f9aac9ad9a0207e",
+            userid: "KDSJKDSLJFDS0980990890833"
+          }
+          function vennLoaded(){
+            /* anything you want to do after widget has loaded */
+          };
+
+          var script = document.createElement('script'); script.onload = function() {Venn.init(function() {Venn.api('schedule.js', { userid: config.userid, apikey: config.apikey }, "GET", function(response) {document.getElementById('venn-schedule').innerHTML = response.data; Venn.scheduleLoaded(); vennLoaded(); }); }); }; script.src = "//api.getvenn.io/v1/sdk.js?userid="+config.userid+"&apikey="+config.apikey; document.getElementsByTagName('head')[0].appendChild(script);
+        </script>
+      </body>
+      </html>

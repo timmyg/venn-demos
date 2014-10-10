@@ -1,0 +1,114 @@
+
+<!DOCTYPE html>
+<html>
+<head>
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+
+  <title><%= post.title %></title>
+
+  <link rel="stylesheet" href="css/bootstrap.min.css" />
+  <link rel="stylesheet" href="http://netdna.bootstrapcdn.com/font-awesome/4.0.3/css/font-awesome.css" />
+  <link rel="stylesheet" href="css/styles.css" type="text/css" />
+  <script>
+    var monthNames = [ "January", "February", "March", "April", "May", "June",
+    "July", "August", "September", "October", "November", "December" ];
+    var weekday = new Array(7);
+    weekday[0]=  "Sunday";
+    weekday[1] = "Monday";
+    weekday[2] = "Tuesday";
+    weekday[3] = "Wednesday";
+    weekday[4] = "Thursday";
+    weekday[5] = "Friday";
+    weekday[6] = "Saturday";
+  </script>
+  
+  <link href="css/hopscotch.min.css" rel="stylesheet"></link>
+  <script src="js/hopscotch.js"></script>
+  <script src="js/main-tour.js"></script>
+</head>
+<body>
+  <div class="container">
+    <div class="row">
+      <div class="col-lg-2">
+        <header>
+          <div id="logo">
+            <a href="/"><img src="images/logo.png" alt="Divvy Logo"></a>
+          </div>
+        </header><!-- header -->
+        <% if (user) { %>
+        <div id="user-info">
+          <p><%- (user.name) ? user.name : user.username %></p>
+          <img class="avatar" src="images/nessie_headshot.png" style="width: 64px; height: 64px; border-radius: 10px; margin-bottom: 10px;" />
+          <a class="btn btn-primary">MY POSTS</a> <a class="btn btn-primary" href="/me"><i class="fa fa-pencil fa-lg"></i></a> <a class="btn btn-primary" href="/logout"><i class="fa fa-arrow-circle-o-right fa-lg"></i></a>
+        </div>
+
+        <% } else { %>
+        <div class="user-forms">
+          <button id="sign-up-toggle" class="btn btn-primary">SIGN UP</button>
+          <button id="sign-in-toggle" class="btn btn-primary">LOG IN</button>
+        </div>
+        <% } %>
+      </div><!-- end col-lg-2 -->
+
+      <div class="col-lg-8">
+
+
+        <div class="post">
+          <div class="row">
+            <div class="col-lg-2">
+              <img class="avatar" src="images/nessie_headshot.png" style="width: 100px; height: 100px;" />
+            </div>
+            <div class="col-lg-8">
+              <div id="clickable-post">
+                <h1><%= post.title %></h1>
+                <h3 class="task">"<%= post.task %>"</h3>
+                <span class="date"><%= weekday[post.date.getDay()] + " " + monthNames[post.date.getMonth()] + " " + post.date.getDate() + ", " + post.date.getFullYear() %></span>
+                <br /><br />
+                <p class="poster">Submitted by: <a href="/user/<%= post._poster %>"><%= post._poster %></a></span></p>
+                <div class="col-lg-2 bounty">
+                  <p><%= post.bounty %></p>
+                  <p>Points</p>
+                </div><!-- end bounty -->
+                <div class = "row">
+                </div>
+                <div class="interested">
+                  <a href="/account/<%= post.interested[i].username %>" title=""><%= post.interested[i].username %></a>
+                </div>
+              </div>
+            </div><!-- end row -->
+          </div><!-- end post -->
+
+          <div id="venn-picktimes" class="venn"></div>
+
+        </div>
+
+      </div><!-- end row -->
+
+
+    </div><!-- end container -->
+    <footer>
+      <img src="images/nessie.png" />
+    </footer>
+
+    <script type="text/javascript" src="http://code.jquery.com/jquery-1.11.1.min.js"></script>
+
+    <script>
+      config = {
+        apikey: "c674be576f9aac9ad9a0207e",
+        userid: "SLDKJFLDSLKJFDS32423423",
+        authoruserid: "KDSJKDSLJFDS0980990890833",
+        txnid: "KLJSD20384lKHJDJKFSHJD",
+        addresses: [
+        "7875 Montgomery Rd Cincinnati, OH 45236",
+        "1411 Vine St. Cincinnati, OH 45202",
+        "45040"
+        ]
+      }
+      function vennLoaded(){
+        /* anything you want to do after widget has loaded */
+      };
+      /*do no edit anything below this line*/
+      var script = document.createElement('script'); script.onload = function() {Venn.init(function() {Venn.api('pickmeetup.js', { userid: config.userid, apiKey: config.apikey, authoruserid: config.authoruserid, addresses: config.addresses, txnid: config.txnid }, "GET", function(response) {document.getElementById('venn-picktimes').innerHTML = response.data; Venn.picktimesLoaded(); vennLoaded();  Venn.setCoords(config.addresses);  }); }); }; script.src = "//api.getvenn.io/v1/sdk.js?userid="+config.userid+"&apikey="+config.apikey+"&txnid="+config.txnid+"&authoruserid="+config.authoruserid; document.getElementsByTagName('head')[0].appendChild(script);
+    </script>
+  </body>
+  </html>

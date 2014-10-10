@@ -1,1 +1,145 @@
-place divvy project here
+<!DOCTYPE html>
+<html>
+<head>
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+
+  <title>Dashboard</title>
+  <link rel="stylesheet" href="css/bootstrap.min.css" />
+  <link rel="stylesheet" href="http://netdna.bootstrapcdn.com/font-awesome/4.0.3/css/font-awesome.css" />
+  <link rel="stylesheet" href="css/styles.css" type="text/css" />
+  <script>
+    var monthNames = [ "January", "February", "March", "April", "May", "June",
+    "July", "August", "September", "October", "November", "December" ];
+    var weekday = new Array(7);
+    weekday[0]=  "Sunday";
+    weekday[1] = "Monday";
+    weekday[2] = "Tuesday";
+    weekday[3] = "Wednesday";
+    weekday[4] = "Thursday";
+    weekday[5] = "Friday";
+    weekday[6] = "Saturday";
+  </script>
+
+  <link href="css/hopscotch.min.css" rel="stylesheet"></link>
+  <script src="js/hopscotch.js"></script>
+  <script src="js/main-tour.js"></script>
+</head>
+<body>
+  <div class="container">
+    <div class="row">
+      <div class="col-lg-2">
+        <header>
+          <div id="logo">
+            <a href="/"><img src="images/logo.png" alt="Divvy Logo"></a>
+          </div>
+        </header><!-- header -->
+
+        <div id="user-info">
+          <p>Welcome Guest!</p>
+          <img class="avatar" src="images/nessie_headshot.png" style="width: 64px; height: 64px; border-radius: 10px; margin-bottom: 10px;" />
+          <a class="btn btn-primary">MY POSTS</a> <a id='accnt-btn' class="btn btn-primary" href="account.html"><i class="fa fa-pencil fa-lg"></i></a> <a class="btn btn-primary" href="/logout"><i class="fa fa-arrow-circle-o-right fa-lg"></i></a>
+        </div>
+      </div><!-- end col-lg-2 -->
+
+      <div class="col-lg-8 feed">
+        <nav>
+          <div class="searchform">
+            <div id="mainsearch">
+              <input type="text" name="searchbar" placeholder="Search" />
+              <i class="fa fa-search fa-lg"></i>
+              <a class="btn btn-primary" id="new-post-toggle"><i class="fa fa-plus fa-lg"></i></a>
+            </div>
+          </div>
+        </nav>
+
+        <div id="new-post" style="display:none;">
+          <form id="postform">
+            <input id="postTitle" type="text" name="title" placeholder="TITLE" />
+            <select id="postSkills" class="multiselect" type="text" name="skills" placeholder="SKILL" multiple></select>
+            <input id="postPoints" type="text" name="points" placeholder="POINTS" />
+            <textarea id="postTask" name="description" placeholder="DESCRIPTION"></textarea>
+            <input id="new-post-submit" type="button" value="ADD">
+          </form>
+        </div>
+
+        <div class="filter-group">
+          <a class="btn selected" data-q="suggested">SUGGESTED</a>
+          <a class="btn" data-q="trending" id="trending-button">TRENDING</a>
+        </div>
+
+        <div id="posts">
+        <div id="clickable-post" class="post">
+            <div class="row">
+              <div class="col-lg-2">
+                <img class="avatar" src="images/nessie_headshot.png" style="width: 100px; height: 100px;" />
+              </div>
+              <a href="/listing/<%- posts[i]._id %>">
+                <div class="col-lg-6">
+                  <h1><%= posts[i].title %><br /><span class="date"><%= weekday[posts[i].date.getDay()] + " " + monthNames[posts[i].date.getMonth()] + " " + posts[i].date.getDate() + ", " + posts[i].date.getFullYear() %></span></h1>
+                  <p class="task">"<%= posts[i].task %>"</p>
+                  <p class="poster">Submitted by: <span><%= posts[i]._poster %></span></p>
+                </div>
+                <div class="col-lg-4 bounty">
+                  <p><%= posts[i].bounty %></p>
+                  <p>Points</p>
+                  <p><button id="join-button" class="btn">JOIN</button>
+                  </div><!-- end bounty -->
+                </a>
+              </div><!-- end row -->
+            </div><!-- end post -->
+          </div>
+
+        </div><!-- end feed -->
+      </div><!-- end row -->
+    </div><!-- end container -->
+    <footer>
+      <img src="images/nessie.png" />
+    </footer>
+
+    <!-- <script>var user = JSON.parse(<%= user.passwordHash = "" %>'<%- JSON.stringify(user) %>');</script> -->
+    <script>
+      var user_skills = [];
+      var user_interests = [];
+    </script>
+    <script type="text/javascript" src="http://code.jquery.com/jquery-1.11.1.min.js"></script>
+    <script src="js/bootstrap.min.js" type="text/javascript"></script>
+    <script src="js/bootstrap-multiselect.js" type="text/javascript"></script>
+    <!-- <script src="/socket.io/socket.io.js"></script> -->
+    <!-- <script type="text/javascript" src="js/main.js"></script> -->
+    <script type="text/javascript" src="js/account.js"></script>
+    <script>
+      $(document).ready(function() {
+        $('.multiselect').multiselect();
+      });
+    </script>
+    <script>
+      $('#join-button').click(function() {
+        var that = $(this),
+        bounty = that.parent().parent().children(':first').text(),
+        title = that.parent().parent().prev().children(':first').text(),
+        task = that.parent().parent().prev().children('.task').text(),
+        link = '',
+        ifCollected = false,
+        skills = 'none';
+
+      // 'subscribe' user to post
+      var data = {
+        link: link,
+        ifCollected: ifCollected,
+        task: task,
+        title: title,
+        bounty: bounty,
+        skills: skills
+      };
+
+      console.log(data);
+
+      $.post('/update_post', data, function(data) {
+        console.log(data);
+      });
+    });
+  </script>
+
+
+</body>
+</html>
