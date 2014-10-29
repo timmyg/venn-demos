@@ -2,12 +2,14 @@
 <html>
     <head>    
         <title>Third-party Marketplace</title>   
+        <meta content="text/html;charset=utf-8" http-equiv="Content-Type">
+        <meta content="utf-8" http-equiv="encoding">
     </head>
 
     <body>
         <style type="text/css"> #navlist li {display: inline; list-style-type: none; padding-right: 20px; } </style> <div id="navcontainer"> <ul id="navlist"> <li><a href="/widget1/index.html">My Schedule</a></li> <li><a href="/widget2/pick/index.html">Pick</a></li> <li><a href="/widget2/notimes/index.html">No Times</a></li> <li><a href="/widget2/waiting/index.html">Waiting</a></li> </ul> </div>
 
-        <h3>Hi this is a marketplace</h3>
+        <h3>Hi this is a marketplace!</h3>
 
             <div id="venn-schedule" class="venn"></div>
             <script>
@@ -19,7 +21,7 @@
                     /* anything you want to do after widget has loaded */
                 };
 
-                var script = document.createElement('script'); script.onload = function() {Venn.init(function() {Venn.api('schedule.js', { userid: config.userid, apikey: config.apikey }, "GET", function(response) {document.getElementById('venn-schedule').innerHTML = response.data; Venn.scheduleLoaded(); if (typeof vennLoaded == 'function') { vennLoaded(); }; }); }); }; script.src = "//api.getvenn.io/v1/sdk.js?userid="+config.userid+"&apikey="+config.apikey; document.getElementsByTagName('head')[0].appendChild(script);
+                var script = document.createElement('script'); script.onload = function() {Venn.init(function() {Venn.api('schedule.js', { userid: config.userid, apikey: config.apikey }, "GET", function(response) {document.getElementById('venn-schedule').innerHTML = response.data; Venn.scheduleLoaded(); if (typeof vennLoaded == 'function') { vennLoaded(); }; }); }); }; script.src = "//api-test.getvenn.io/v1/sdk.js?userid="+config.userid+"&apikey="+config.apikey; document.getElementsByTagName('head')[0].appendChild(script);
             </script>
 
     </body>

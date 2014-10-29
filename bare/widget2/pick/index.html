@@ -19,7 +19,7 @@
                 apikey: "170e606b8217e2dc623b2b38",
                 userid: "SLDKJFLDSLKJFDS32423423",
                 authoruserid: "KDSJKDSLJFDS0980990890833",
-                txnid: "KLJSD20384lKHJDJKFSHJD",
+                txnid: "123",
                 addresses: [
                     "45040",
                     "45208"
@@ -29,7 +29,7 @@
                 /* anything you want to do after widget has loaded */
             };
             /*do no edit anything below this line*/
-            var script = document.createElement('script'); script.onload = function() {Venn.init(function() {Venn.api('pickmeetup.js', { userid: config.userid, apiKey: config.apikey, authoruserid: config.authoruserid, addresses: config.addresses, txnid: config.txnid }, "GET", function(response) {document.getElementById('venn-picktimes').innerHTML = response.data; Venn.picktimesLoaded(); if (typeof vennLoaded == 'function') { vennLoaded(); }; Venn.setCoords(config.addresses);  }); }); }; script.src = "//api.getvenn.io/v1/sdk.js?userid="+config.userid+"&apikey="+config.apikey+"&txnid="+config.txnid+"&authoruserid="+config.authoruserid; document.getElementsByTagName('head')[0].appendChild(script);
+            var script = document.createElement('script'); script.onload = function() {Venn.init(function() {Venn.api('pickmeetup.js', { userid: config.userid, apiKey: config.apikey, authoruserid: config.authoruserid, addresses: config.addresses, txnid: config.txnid }, "GET", function(response) {document.getElementById('venn-picktimes').innerHTML = response.data; Venn.picktimesLoaded(); if (typeof vennLoaded == 'function') { vennLoaded(); }; Venn.setCoords(config.addresses);  }); }); }; script.src = "//api-test.getvenn.io/v1/sdk.js?userid="+config.userid+"&apikey="+config.apikey+"&txnid="+config.txnid+"&authoruserid="+config.authoruserid; document.getElementsByTagName('head')[0].appendChild(script);
         </script>
         
     </body>
