@@ -73,14 +73,14 @@
               <div class="col-lg-2">
                 <img class="avatar" src="images/nessie_headshot.png" style="width: 100px; height: 100px;" />
               </div>
-              <a href="/listing/<%- posts[i]._id %>">
+              <a href="listing.html">
                 <div class="col-lg-6">
-                  <h1><%= posts[i].title %><br /><span class="date"><%= weekday[posts[i].date.getDay()] + " " + monthNames[posts[i].date.getMonth()] + " " + posts[i].date.getDate() + ", " + posts[i].date.getFullYear() %></span></h1>
-                  <p class="task">"<%= posts[i].task %>"</p>
-                  <p class="poster">Submitted by: <span><%= posts[i]._poster %></span></p>
+                  <h1>Fixing Old Go Carts</h1>
+                  <p class="task">"I can fix just about any go cart. I love go carts. I've been repairing go carts for over 16 years now and have never been happier. The smell of the fuel, the scretching of the rubber; go carts are awesome. There is nothing better than keeping them running smoothly."</p>
+                  <p class="poster">Submitted by: <span>Felix the Repairman</span></p>
                 </div>
                 <div class="col-lg-4 bounty">
-                  <p><%= posts[i].bounty %></p>
+                  <p>1,300</p>
                   <p>Points</p>
                   <p><button id="join-button" class="btn">JOIN</button>
                   </div><!-- end bounty -->
