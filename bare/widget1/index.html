@@ -21,7 +21,7 @@
                     /* anything you want to do after widget has loaded */
                 };
 
-                var script = document.createElement('script'); script.onload = function() {Venn.init(function() {Venn.api('schedule.js', { userid: config.userid, apikey: config.apikey }, "GET", function(response) {document.getElementById('venn-schedule').innerHTML = response.data; Venn.scheduleLoaded(); if (typeof vennLoaded == 'function') { vennLoaded(); }; }); }); }; script.src = "//api-test.getvenn.io/v1/sdk.js?userid="+config.userid+"&apikey="+config.apikey; document.getElementsByTagName('head')[0].appendChild(script);
+                var script = document.createElement('script'); script.onload = function() {Venn.init(function() {Venn.api('schedule.js', { userid: config.userid, apikey: config.apikey }, "GET", function(response) {document.getElementById('venn-schedule').innerHTML = response.data; Venn.scheduleLoaded(); if (typeof vennLoaded == 'function') { vennLoaded(); }; }); }); }; script.src = "//api-test.getvenn.io/v0.1/sdk.js?userid="+config.userid+"&apikey="+config.apikey; document.getElementsByTagName('head')[0].appendChild(script);
             </script>
 
     </body>

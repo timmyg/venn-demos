@@ -30,7 +30,7 @@
             };
 
 
-            var script = document.createElement('script'); script.onload = function() {Venn.init(function() {Venn.api('pickmeetup.js', { userid: config.userid, apikey: config.apikey, authoruserid: config.authoruserid, addresses: config.addresses, txnid: config.txnid }, "GET", function(response) {document.getElementById('venn-picktimes').innerHTML = response.data; Venn.picktimesLoaded(); if (typeof vennLoaded == 'function') { vennLoaded(); };   Venn.setCoords(config.addresses);  }); }); }; script.src = "//api-test.getvenn.io/v1/sdk.js?userid="+config.userid+"&apikey="+config.apikey+"&txnid="+config.txnid+"&authoruserid="+config.authoruserid; document.getElementsByTagName('head')[0].appendChild(script);
+            var script = document.createElement('script'); script.onload = function() {Venn.init(function() {Venn.api('pickmeetup.js', { userid: config.userid, apikey: config.apikey, authoruserid: config.authoruserid, addresses: config.addresses, txnid: config.txnid }, "GET", function(response) {document.getElementById('venn-picktimes').innerHTML = response.data; Venn.picktimesLoaded(); if (typeof vennLoaded == 'function') { vennLoaded(); };   Venn.setCoords(config.addresses);  }); }); }; script.src = "//api-test.getvenn.io/v0.1/sdk.js?userid="+config.userid+"&apikey="+config.apikey+"&txnid="+config.txnid+"&authoruserid="+config.authoruserid; document.getElementsByTagName('head')[0].appendChild(script);
 
 
 
