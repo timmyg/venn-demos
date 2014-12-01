@@ -3,11 +3,19 @@
 <head>
   <meta name="viewport" content="width=device-width, initial-scale=1">
 
-  <title>Account</title>
+  <title>Your Account - Divvy</title>
+  <link rel="icon" type="image/png" href="favicons/favicon-96x96.png" sizes="96x96">
+  <link rel="icon" type="image/png" href="favicons/favicon-16x16.png" sizes="16x16">
+  <link rel="icon" type="image/png" href="favicons/favicon-32x32.png" sizes="32x32">
+  <meta name="msapplication-TileColor" content="#da532c">
+
 
   <link rel="stylesheet" href="css/bootstrap.min.css" />
-  <link rel="stylesheet" href="http://netdna.bootstrapcdn.com/font-awesome/4.0.3/css/font-awesome.css" />
+  <link rel="stylesheet" href="http://netdna.bootstrapcdn.com/font-awesome/4.2.0/css/font-awesome.css" />
   <link rel="stylesheet" href="css/styles.css" type="text/css" />
+
+
+
   <script>
     var monthNames = [ "January", "February", "March", "April", "May", "June",
     "July", "August", "September", "October", "November", "December" ];
@@ -43,10 +51,10 @@
 
 
       <div class="col-lg-8">
-        <h2>Weekly Schedule:</h2>
+        <h2><i class="fa fa-calendar"></i> Your Weekly Schedule:</h2>
         <div id="venn-schedule" class="venn"></div>
 
-        <h2>Personal Details:</h2>
+        <h2><i class="fa fa-user"></i> Your Details:</h2>
         <form role="form" id="edit-user-form" action="/update" method="POST">
 
           <input type="text" name="name" placeholder="Name" value="Sam the Seamstress" />
@@ -75,11 +83,19 @@
         </div>
 
         <div class="col-lg-12">
-          <h1>Your Posts:</h1>
+          <h1><i class="fa fa-newspaper-o"></i> Your Posts:</h1>
           <table class="profile-posts table table-striped">
             <tr><td><a href="#"><div>
               <h3>Fixing Seams of old Scarves</h3>
               <span class="task">"Scarves are so warm and cozy! They are always the sign of the start of winter and Pumpkin Spice Lattes. Its always so sad when your favorite scarf starts to fall apart. I'm here to help! I'm a great seamstress and love fixing scarves on my weekends. "</span><br />
+            </div></a></td></tr>
+            <tr><td><a href="#"><div>
+              <h3>Teaching Origami</h3>
+              <span class="task">"I love Origami. There is no art better than the Japanese art of paper folding. If you would love to learn how to make a simple flower or a paper crane, I'd love to help."</span><br />
+            </div></a></td></tr>
+            <tr><td><a href="#"><div>
+              <h3>cupcake Icing Art</h3>
+              <span class="task">"Who doesn't love cupcakes? Its your own personal cake! I love decorating the icing and posting them on Instragram. If you want to learn this art I'd love to teach you."</span><br />
             </div></a></td></tr>
           </table>
         </div>
