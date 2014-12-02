@@ -39,12 +39,12 @@ $(function() {
 			script += "<script class=\"venn-script\">";
 			script += "    config = {";
 			script += "        apikey: \""+ apiKey +"\",";
-			// script += "        userid: \"user999\",";
+			script += "        userid: \"user999\",";
 			// script += "        authoruserid: \"alwayshastimes888\",";
-			// script += "        txnid: \"txn2345\",";
+			script += "        txnid: \"txn2345\",";
 			script += "        addresses: "+addresses+"";
 			script += "    };";
-			script += "    var script = document.createElement(\"script\"); script.onload = function() {Venn.init(function() {data = { userid: config.userid, apiKey: config.apikey, authoruserid: config.authoruserid, addresses: config.addresses, txnid: config.txnid }; Venn.api(\"pickmeetup.js\", JSON.stringify(data), \"POST\", function(response) {document.getElementById(\"venn-picktimes\").innerHTML = response.data; Venn.picktimesLoaded(); if (typeof vennLoaded == \"function\") { vennLoaded(); }; Venn.setCoords(config.addresses);  }); }); }; script.src = \"//api.getvenn.io/v0.1/sdk.js?userid=\"+config.userid+\"&apikey=\"+config.apikey+\"&txnid=\"+config.txnid+\"&authoruserid=\"+config.authoruserid; document.getElementsByTagName(\"head\")[0].appendChild(script);";
+			script += "    var script = document.createElement(\"script\"); script.onload = function() {Venn.init(function() {data = { userid: config.userid, apiKey: config.apikey, addresses: config.addresses, txnid: config.txnid }; Venn.api(\"pickmeetup.js\", JSON.stringify(data), \"POST\", function(response) {document.getElementById(\"venn-picktimes\").innerHTML = response.data; Venn.picktimesLoaded(); if (typeof vennLoaded == \"function\") { vennLoaded(); }; Venn.setCoords(config.addresses);  }); }); }; script.src = \"//api.getvenn.io/v0.1/sdk.js?userid=\"+config.userid+\"&apikey=\"+config.apikey+\"&txnid=\"+config.txnid+\"&authoruserid=\"+config.authoruserid; document.getElementsByTagName(\"head\")[0].appendChild(script);";
 			script += "</script>";
 
 			$("div.widget-container").html(script);
