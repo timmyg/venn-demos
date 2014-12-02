@@ -25,7 +25,7 @@ $(function() {
 	}
 
 	var loadWidget = function(address1, address2, apiKey) {
-			var addresses = JSON.stringify([ address1, address2 ]);
+			var addresses = JSON.stringify([ {address: address1}, {address: address2} ]);
 			console.log("loading widget with apiKey: ", apiKey);
 
 
@@ -39,12 +39,12 @@ $(function() {
 			script += "<script class=\"venn-script\">";
 			script += "    config = {";
 			script += "        apikey: \""+ apiKey +"\",";
-			script += "        userid: \"user999\",";
-			script += "        authoruserid: \"alwayshastimes888\",";
-			script += "        txnid: \"txn2345\",";
+			// script += "        userid: \"user999\",";
+			// script += "        authoruserid: \"alwayshastimes888\",";
+			// script += "        txnid: \"txn2345\",";
 			script += "        addresses: "+addresses+"";
 			script += "    };";
-			script += "    var script = document.createElement(\"script\"); script.onload = function() {Venn.init(function() {Venn.api(\"pickmeetup.js\", { userid: config.userid, apiKey: config.apikey, authoruserid: config.authoruserid, addresses: config.addresses, txnid: config.txnid }, \"GET\", function(response) {document.getElementById(\"venn-picktimes\").innerHTML = response.data; Venn.picktimesLoaded(); if (typeof vennLoaded == \"function\") { vennLoaded(); }; Venn.setCoords(config.addresses);  }); }); }; script.src = \"//api.getvenn.io/v0.1/sdk.js?userid=\"+config.userid+\"&apikey=\"+config.apikey+\"&txnid=\"+config.txnid+\"&authoruserid=\"+config.authoruserid; document.getElementsByTagName(\"head\")[0].appendChild(script);";
+			script += "    var script = document.createElement(\"script\"); script.onload = function() {Venn.init(function() {data = { userid: config.userid, apiKey: config.apikey, authoruserid: config.authoruserid, addresses: config.addresses, txnid: config.txnid }; Venn.api(\"pickmeetup.js\", JSON.stringify(data), \"POST\", function(response) {document.getElementById(\"venn-picktimes\").innerHTML = response.data; Venn.picktimesLoaded(); if (typeof vennLoaded == \"function\") { vennLoaded(); }; Venn.setCoords(config.addresses);  }); }); }; script.src = \"//api.getvenn.io/v0.1/sdk.js?userid=\"+config.userid+\"&apikey=\"+config.apikey+\"&txnid=\"+config.txnid+\"&authoruserid=\"+config.authoruserid; document.getElementsByTagName(\"head\")[0].appendChild(script);";
 			script += "</script>";
 
 			$("div.widget-container").html(script);
@@ -81,6 +81,8 @@ $(function() {
 		console.log("loading widget");
 		$("input#person-1").val(decodeURI( address1 ) );
   		$("input#person-2").val(decodeURI( address2 ) );
+  		// for some reason adding slash to end sometimes
+  		type = type.replace(/\//g, '');
   		$("a#" + type).addClass("active");
 		loadWidget(address1, address2, apiKey);
 	}

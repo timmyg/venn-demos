@@ -47,7 +47,7 @@
 		        </div>
 
 		        <div class="right">
-			        <div id="venn-schedule" class="venn  text-cent"></div>
+			        <div id="venn-schedule" class="venn  text-center"></div>
 			        <script>
 
 
@@ -56,8 +56,7 @@
 			                userid: "seller123"
 			            };
 
-			            var script = document.createElement('script'); script.onload = function() {Venn.init(function() {Venn.api('schedule.js', { userid: config.userid, apikey: config.apikey }, "GET", function(response) {document.getElementById('venn-schedule').innerHTML = response.data; Venn.scheduleLoaded(); if (typeof vennLoaded == 'function') { vennLoaded(); } }); }); }; script.src = "//api.getvenn.io/v0.1/sdk.js?userid="+config.userid+"&apikey="+config.apikey; document.getElementsByTagName('head')[0].appendChild(script);
-			        </script>
+			            var script = document.createElement('script'); script.onload = function() {Venn.init(function() {Venn.api('schedule.js', {userid: config.userid, apikey: config.apikey }, "GET", function(response) {if(response.error) {document.getElementById('venn-schedule').innerHTML = "Something went wrong! Please reload page."; } else {document.getElementById('venn-schedule').innerHTML = response.data; Venn.scheduleLoaded(); if (typeof vennLoaded == 'function') {vennLoaded(); } } }); }); }; script.src = "//api.getvenn.io/v0.1/sdk.js?userid=" + config.userid + "&apikey=" + config.apikey; document.getElementsByTagName('head')[0].appendChild(script); </script>
 			    </div>
 
 		        
